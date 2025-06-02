@@ -104,6 +104,7 @@ Bu uygulama, öğretmenlerin dijital içerik üretimini kolaylaştırmayı, öğ
 🗓️ Dönem: 2025 Bahar
 📝 Lisans
 
+--
 🖼️ Ekran Görselleri
 ![1](https://github.com/user-attachments/assets/5e678898-28ab-4b68-842a-52a5d20953ca)
 ![2](https://github.com/user-attachments/assets/8e050d62-04ea-4306-96f4-083f30ef1a47)
