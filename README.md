@@ -109,17 +109,3 @@ Proje Türü: Lisans / Eğitim Amaçlı
 
 🤝 Katkı ve İletişim
 Proje eğitim amacıyla geliştirilmiştir. Gönüllü katkılara açıktır. Geri bildirim ve katkılarınız için GitHub üzerinden iletişime geçebilirsiniz.
-
-📸 Ekran Görüntüleri
-Aşağıda projeye ait tüm sayfaların ekran görüntülerini sıralı olarak ekleyiniz:
-![1](https://github.com/user-attachments/assets/2569f23d-8f54-4cb5-8b04-ddf192a412c9)
-![2](https://github.com/user-attachments/assets/506cfdda-c27a-46d1-be57-499c44eba6d1)
-![3](https://github.com/user-attachments/assets/ad066a53-8c4e-4cfe-9bab-ea5f0b372b28)
-![4](https://github.com/user-attachments/assets/d42eaad5-b6ad-4f69-9356-211988e74f67)
-![5](https://github.com/user-attachments/assets/cffaaa8b-eeab-4085-a34b-c83558ba86d3)
-![6](https://github.com/user-attachments/assets/b7813860-9a66-4cae-97ab-4e02ac781b7d)
-![7](https://github.com/user-attachments/assets/c95d8220-3905-4c23-a6cd-e021571e9ae4)
-![8](https://github.com/user-attachments/assets/051b83f8-7c9d-4c6c-b2e2-1493053a9101)
-![9](https://github.com/user-attachments/assets/58bb43f7-0d63-4592-9ab3-0beb13b32e4c)
-
-
