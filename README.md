@@ -105,7 +105,8 @@ Bu uygulama, öğretmenlerin dijital içerik üretimini kolaylaştırmayı, öğ
 📝 Lisans
 
 🖼️ Ekran Görselleri
-![1](https://github.com/user-attachments/assets/09cf3f86-a038-4cc5-979d-95a80b60e658)
+![1](https://github.com/user-attachments/assets/fbef979a-99f6-462d-b541-7d753f61cfeb)
+
 
 
 
