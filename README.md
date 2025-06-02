@@ -1,45 +1,40 @@
-# 🎓 Gazi Edukate – ASP.NET Core Tabanlı Yabancı Dil Eğitim Platformu
+# 🎓 Gazi Edukate – ASP.NET Core MVC Tabanlı Yabancı Dil Eğitim Platformu
 
-**Gazi Edukate**, öğretmenlerin PDF tabanlı ödev hazırlayıp öğrencilere sunabildiği, ayrıca boşluk doldurma gibi dil eğitimi çalışmaları oluşturabildiği, kullanıcı dostu bir öğretmen paneli sunan modern bir web uygulamasıdır. 
-
-Bu proje, **Gazi Üniversitesi** kapsamında, **ASP.NET Core MVC** teknolojileriyle geliştirilmiştir ve "Liveworksheets" gibi eğitim platformlarına ilham alarak geliştirilmiş özgün bir sistemdir. Öğretmenler, sistem üzerinden öğrenciler için PDF ödevler yükleyebilir, yeni çalışmalar oluşturabilir ve bu çalışmaları hem veritabanında saklayabilir hem de PDF formatında dışa aktarabilir.
+**Gazi Edukate**, Gazi Üniversitesi Bilgisayar Proje Tasarımı dersi kapsamında geliştirilen, öğretmenlerin PDF ödevleri hazırlayıp öğrencilere sunabildiği, boşluk doldurma gibi dil eğitimi çalışmaları oluşturabildiği modern bir web uygulamasıdır. Bu sistem, dijital içerik üretimini kolaylaştırmayı ve hem dijital hem yazılı eğitim materyallerini bir arada sunmayı hedefler.
 
 ---
 
-## 🚀 Proje Özeti
+## 🚀 Proje Amacı
 
-Gazi Edukate, yabancı dil eğitimine katkı sunmak amacıyla geliştirilen bir içerik yönetim sistemidir. Projede öğretmenler, sisteme giriş yaptıktan sonra öğrencilere yönelik PDF ödevleri ve çalışmaları hazırlayabilmekte; bu içerikleri hem dijital ortamda saklamakta hem de çıktı olarak indirebilmektedir.
-
-Sistem; kullanıcı rolleri (öğrenci, öğretmen), oturum yönetimi, dosya yükleme, PDF üretimi, SQL veritabanı bağlantısı ve içerik oluşturma bileşenlerini içermektedir.
+Bu platform; öğretmenlerin bireysel ve hedefe yönelik eğitim içerikleri üretmesini, bu içerikleri sistemde arşivlemesini ve öğrencilerle etkileşimli biçimde paylaşmasını amaçlamaktadır. Aynı zamanda PDF çıktılar sayesinde geleneksel yöntemlerle eğitime devam imkânı da sunar.
 
 ---
 
 ## ⚙️ Kullanılan Teknolojiler
 
-- **ASP.NET Core MVC** – Web uygulama çatısı
-- **Entity Framework Core** – ORM ve SQL Server bağlantısı
-- **Rotativa.AspNetCore** – PDF üretimi
-- **Bootstrap 5** – Modern responsive arayüz
-- **Razor View Engine** – View sayfa oluşturma
-- **MSSQL Server** – Veritabanı
-- **Session Management** – Oturum takibi ve yetkilendirme
+- **ASP.NET Core MVC** – Uygulama çatısı
+- **Entity Framework Core** – ORM ve SQL Server ile veri işlemleri
+- **Rotativa.AspNetCore** – PDF çıktısı alma
+- **Bootstrap 5** – Responsive tasarım
+- **Razor View Engine** – View sayfaları
+- **MSSQL Server** – Veritabanı altyapısı
+- **Session Management** – Yetkilendirme ve oturum kontrolü
 
 ---
 
 ## 👨‍🏫 Öğretmen Paneli Özellikleri
 
-- 🔐 Giriş sistemi (E-posta/TC ve şifre)
-- 📄 Ödev yükleme (PDF dosya + başlık + açıklama)
-- 📁 Ödevleri listeleme ve görüntüleme
+- 🔐 Güvenli giriş sistemi (TC/Eposta + Şifre)
+- 📄 PDF ödev yükleme (Açıklama + dosya)
+- 🗂️ Ödev listeleme ve görüntüleme
 - 🧠 Boşluk doldurma çalışması oluşturma
-- 🖨️ PDF formatında çıktı alma
-- 🗃️ Oluşturulan çalışmaları veritabanında saklama
+- 🖨️ PDF çıktısı alma
 - 👥 Öğrenci listesi görüntüleme
-- 🚪 Güvenli çıkış yapma (Session temizleme)
+- 🚪 Güvenli çıkış (Session temizleme)
 
 ---
 
-## 🧩 Proje Dosya Yapısı
+## 🗂️ Proje Dosya Yapısı
 
 ```plaintext
 /Controllers
@@ -66,46 +61,65 @@ Sistem; kullanıcı rolleri (öğrenci, öğretmen), oturum yönetimi, dosya yü
 |-- /Dosyalar (Yüklenen PDF ödevler)
 |-- /css, /js, /resimler
 
-🧪 Test Senaryosu
-Sisteme öğretmen olarak giriş yapılır.
+🔍 Test Senaryosu
+Öğretmen girişi yapılır.
 
-Ödev yükleme sayfasına gidilerek PDF eklenir.
+Ödev ekleme ekranına gidilip PDF dosyası yüklenir.
 
-Yüklenen ödevler listelenir ve bağlantı üzerinden görüntülenir.
+Yüklenen ödevler listelenir ve kontrol edilir.
 
-Boşluk doldurmalı bir içerik oluşturulur.
+Yeni bir boşluk doldurma çalışması hazırlanır.
 
-Bu içerik PDF olarak indirilir veya veritabanına kaydedilir.
+PDF çıktısı alınır ve veritabanına kaydedilir.
 
-Öğrenci listesi görüntülenerek kontrol yapılır.
+Öğrenci listesi görüntülenerek sistem doğrulanır.
 
-📌 Geliştirme Aşamaları
- Giriş ve yetkilendirme sistemi
+🛠️ Geliştirme Aşamaları
+✅ Giriş ve yetkilendirme
 
- PDF ödev yükleme
+✅ PDF ödev yükleme ve listeleme
 
- Ödev listeleme/görüntüleme
+✅ Boşluk doldurma çalışması ve çıktısı
 
- Boşluk doldurma çalışması oluşturma ve PDF çıktısı alma
+✅ Öğrenci listeleme
 
- Öğrenci listesi oluşturma
+🔄 Öğrenci çözüm yükleme (Planlandı)
 
- Öğrencilerin PDF çözüm yüklemesi (planlandı)
+🔄 Puanlama ve onay sistemi (Planlandı)
 
- Öğretmen onay ve puanlama modülü (planlandı)
+🎯 Katma Değer
+Öğretmenlere dijital içerik üretim kolaylığı
 
-📎 Proje Hedefi ve Katma Değeri
-Bu uygulama, öğretmenlerin dijital içerik üretimini kolaylaştırmayı, öğrencilere bireysel ve hedefe yönelik dil eğitimi materyali sunmayı ve tüm bu süreci dijital ortamda saklamayı hedeflemektedir. Aynı zamanda PDF çıktısıyla klasik eğitim alışkanlıklarını da desteklemektedir.
+Öğrencilere bireyselleştirilmiş içerik desteği
 
-💬 Geliştiren
-👨‍💻 Geliştirici: İsmail Dündar
-🎓 Üniversite: Gazi Üniversitesi
-📚 Ders: Bilgisayar Proje Tasarımı Dersi
-🗓️ Dönem: 2025 Bahar
-📝 Lisans
+Klasik ve dijital eğitimi bir araya getiren yapı
 
+Arşivleme ve çıktı alma imkanı
 
+👨‍💻 Geliştirici Bilgileri
+Geliştirici: İsmail Dündar
 
-Bu proje eğitim amaçlıdır. Gönüllü katkılara açıktır. Geri bildirimlerinizi ve önerilerinizi memnuniyetle karşılarız.
+Üniversite: Gazi Üniversitesi
+
+Ders: Bilgisayar Proje Tasarımı
+
+Dönem: 2025 Bahar
+
+Proje Türü: Lisans / Eğitim Amaçlı
+
+🤝 Katkı ve İletişim
+Proje eğitim amacıyla geliştirilmiştir. Gönüllü katkılara açıktır. Geri bildirim ve katkılarınız için GitHub üzerinden iletişime geçebilirsiniz.
+
+📸 Ekran Görüntüleri
+Aşağıda projeye ait tüm sayfaların ekran görüntülerini sıralı olarak ekleyiniz:
+![1](https://github.com/user-attachments/assets/2569f23d-8f54-4cb5-8b04-ddf192a412c9)
+![2](https://github.com/user-attachments/assets/506cfdda-c27a-46d1-be57-499c44eba6d1)
+![3](https://github.com/user-attachments/assets/ad066a53-8c4e-4cfe-9bab-ea5f0b372b28)
+![4](https://github.com/user-attachments/assets/d42eaad5-b6ad-4f69-9356-211988e74f67)
+![5](https://github.com/user-attachments/assets/cffaaa8b-eeab-4085-a34b-c83558ba86d3)
+![6](https://github.com/user-attachments/assets/b7813860-9a66-4cae-97ab-4e02ac781b7d)
+![7](https://github.com/user-attachments/assets/c95d8220-3905-4c23-a6cd-e021571e9ae4)
+![8](https://github.com/user-attachments/assets/051b83f8-7c9d-4c6c-b2e2-1493053a9101)
+![9](https://github.com/user-attachments/assets/58bb43f7-0d63-4592-9ab3-0beb13b32e4c)
 
 
