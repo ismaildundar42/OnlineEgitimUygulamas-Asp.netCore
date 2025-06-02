@@ -105,9 +105,15 @@ Bu uygulama, öğretmenlerin dijital içerik üretimini kolaylaştırmayı, öğ
 📝 Lisans
 
 🖼️ Ekran Görselleri
-![1](https://github.com/user-attachments/assets/fbef979a-99f6-462d-b541-7d753f61cfeb)
-
-
+![1](https://github.com/user-attachments/assets/5e678898-28ab-4b68-842a-52a5d20953ca)
+![2](https://github.com/user-attachments/assets/8e050d62-04ea-4306-96f4-083f30ef1a47)
+![3](https://github.com/user-attachments/assets/d843daf5-ca3d-4dd0-8fc7-2a83a4fd99eb)
+![4](https://github.com/user-attachments/assets/62a4f296-1c40-4ddb-9f55-8b78c3c40bd9)
+![5](https://github.com/user-attachments/assets/cb3fb82f-10ce-427a-a671-d3e493b0d26b)
+![6](https://github.com/user-attachments/assets/f9f0e28b-d7c9-4ddf-a17c-9a480e07f890)
+![7](https://github.com/user-attachments/assets/20b1998c-1ff4-4e72-9e2b-381abcf44eff)
+![8](https://github.com/user-attachments/assets/a4d99ba5-3280-4326-803f-0063de6cf120)
+![9](https://github.com/user-attachments/assets/9a1e6b7d-b6a2-4cd9-ab91-996515e9fa1a)
 
 
 Bu proje eğitim amaçlıdır. Gönüllü katkılara açıktır. Geri bildirimlerinizi ve önerilerinizi memnuniyetle karşılarız.
