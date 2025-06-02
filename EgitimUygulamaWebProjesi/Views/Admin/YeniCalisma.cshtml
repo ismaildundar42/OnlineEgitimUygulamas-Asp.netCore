@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Çalışma Oluştur";
+    Layout = "~/Views/Shared/_OgretmenLayout.cshtml";
+}
+
+<h2 class="mb-4">Boşluk Doldurmalı Çalışma Oluştur</h2>
+
+@if (ViewBag.Mesaj != null)
+{
+    <div class="alert alert-success">@ViewBag.Mesaj</div>
+}
+
+<form method="post" action="/Admin/YeniCalisma" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="baslik" class="form-label">Çalışma Başlığı</label>
+        <input type="text" name="baslik" id="baslik" class="form-control" required placeholder="Örnek: Fiiller - İngilizce 1" />
+    </div>
+
+    <div class="mb-3">
+        <label for="icerik" class="form-label">Çalışma İçeriği</label>
+        <textarea name="icerik" id="icerik" rows="10" class="form-control" required placeholder="Örnek: I _____ to school every day. He _____ reading a book."></textarea>
+    </div>
+
+    <div class="d-flex gap-3">
+        <!-- Veritabanına kaydet -->
+        <button type="submit" class="btn btn-success" name="islem" value="kaydet">
+            <i class="bi bi-database-fill-check"></i> Veritabanına Kaydet
+        </button>
+
+        <!-- PDF olarak indir -->
+        <button type="submit" class="btn btn-danger" name="islem" value="indir">
+            <i class="bi bi-file-earmark-pdf-fill"></i> PDF Olarak İndir
+        </button>
+    </div>
+</form>

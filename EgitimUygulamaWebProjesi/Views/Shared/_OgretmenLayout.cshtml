@@ -1,0 +1,101 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>Gazi Edukate - Öğretmen Paneli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f1f2f6;
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: #2d3436;
+            color: white;
+            padding-top: 20px;
+        }
+
+            .sidebar h4 {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .sidebar .nav-link {
+                color: #dfe6e9;
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                transition: background 0.2s;
+            }
+
+                .sidebar .nav-link:hover {
+                    background-color: #636e72;
+                    color: white;
+                }
+
+                .sidebar .nav-link i {
+                    margin-right: 10px;
+                }
+
+        .content {
+            margin-left: 250px;
+            padding: 30px;
+        }
+
+        .brand-logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 80px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <img src="~/resimler/gazilogo.png" class="brand-logo" alt="Logo" />
+        <h4>Gazi Edukate</h4>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="@Url.Action("Index", "Admin")"><i class="bi bi-house-door-fill"></i> Ana Sayfa</a>
+            <a class="nav-link" href="@Url.Action("OdevEkle", "Admin")"><i class="bi bi-file-earmark-plus"></i> Ödev Yükle</a>
+            <a class="nav-link" href="@Url.Action("Index", "Odev")"><i class="bi bi-folder2-open"></i> Ödevler</a>
+            <a class="nav-link" href="@Url.Action("OgrenciListesi", "Admin")"><i class="bi bi-people-fill"></i> Öğrenciler</a>
+
+            <!-- YENİ EKLENDİ -->
+            <a class="nav-link" href="@Url.Action("YeniCalisma", "Admin")">
+                <i class="bi bi-pencil-square"></i> Çalışma Oluştur
+            </a>
+
+            <a class="nav-link" href="@Url.Action("Index", "Default")"><i class="bi bi-box-arrow-right"></i> Çıkış Yap</a>
+        </nav>
+
+    </div>
+
+    <div class="content">
+        @RenderBody()
+        <footer>
+            © 2025 Gazi Edukate Öğretmen Paneli
+        </footer>
+    </div>
+
+</body>
+</html>

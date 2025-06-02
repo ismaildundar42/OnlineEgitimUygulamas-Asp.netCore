@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-5">
+    <h2 class="text-center mb-5">Popüler Dil Ödevleri</h2>
+    <div class="row">
+        <!-- Kart 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="~/resimler/pastsimple.jpg" class="card-img-top" alt="Past Simple">
+                <div class="card-body">
+                    <h5 class="card-title">Past Simple - Düzenli ve Düzensiz Fiiller</h5>
+                    <p class="text-muted">İngilizce | 4. Sınıf</p>
+                    <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modal1">PDF Önizleme</button>
+                    <a href="~/pdf/pastsimple.pdf" download class="btn btn-primary btn-sm float-right">İndir</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kart 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="~/resimler/presentsimple.png" class="card-img-top" alt="Present Simple">
+                <div class="card-body">
+                    <h5 class="card-title">Present Simple - Geniş Zaman Alıştırması</h5>
+                    <p class="text-muted">İngilizce | Orta Seviye</p>
+                    <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modal2">PDF Önizleme</button>
+                    <a href="~/pdf/presentsimple.pdf" download class="btn btn-primary btn-sm float-right">İndir</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kart 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="~/resimler/simplepasttense.jpg" class="card-img-top" alt="Simple Past Tense">
+                <div class="card-body">
+                    <h5 class="card-title">Simple Past Tense - Düzenli Fiiller</h5>
+                    <p class="text-muted">İngilizce | 3. Sınıf</p>
+                    <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modal3">PDF Önizleme</button>
+                    <a href="~/pdf/simplepasttense.pdf" download class="btn btn-primary btn-sm float-right">İndir</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kart 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="~/resimler/ftense.jpg" class="card-img-top" alt="Future Tense">
+                <div class="card-body">
+                    <h5 class="card-title">Future Tense - Gelecek Zaman</h5>
+                    <p class="text-muted">İngilizce | Orta Seviye</p>
+                    <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modal4">PDF Önizleme</button>
+                    <a href="~/pdf/futuretense.pdf" download class="btn btn-primary btn-sm float-right">İndir</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kart 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="~/resimler/alm.jpeg" class="card-img-top" alt="Almanca A1">
+                <div class="card-body">
+                    <h5 class="card-title">Almanca A1 - Günlük Kalıplar</h5>
+                    <p class="text-muted">Almanca | Başlangıç</p>
+                    <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modal5">PDF Önizleme</button>
+                    <a href="~/pdf/german_a1.pdf" download class="btn btn-primary btn-sm float-right">İndir</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kart 6 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="~/resimler/fransizca.jpg" class="card-img-top" alt="Fransızca B1">
+                <div class="card-body">
+                    <h5 class="card-title">Fransızca B1 - Diyalog Tamamlama</h5>
+                    <p class="text-muted">Fransızca | Orta Seviye</p>
+                    <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#modal6">PDF Önizleme</button>
+                    <a href="~/pdf/french_b1.pdf" download class="btn btn-primary btn-sm float-right">İndir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+<div class="modal fade" id="modal1" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="~/resimler/pastsimple.jpg" class="img-fluid" /></div></div></div>
+<div class="modal fade" id="modal2" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="~/resimler/presentsimple.png" class="img-fluid" /></div></div></div>
+<div class="modal fade" id="modal3" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="~/resimler/simplepasttense.jpg" class="img-fluid" /></div></div></div>
+<div class="modal fade" id="modal4" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="~/resimler/ftense.jpg" class="img-fluid" /></div></div></div>
+<div class="modal fade" id="modal5" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="~/resimler/alm.jpeg" class="img-fluid" /></div></div></div>
+<div class="modal fade" id="modal6" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><img src="~/resimler/fransizca.jpg" class="img-fluid" /></div></div></div>

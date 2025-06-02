@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EgitimSitesiProjeTasarimiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Eposta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Rol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Odevler" Relationship="Self.FK__Odevler__Ogretme__398D8EEE" FromRole="Kullanicilar" ToRole="Odevler" />
+    <NavigationProperty Name="OdevTeslimleri" Relationship="Self.FK__OdevTesli__Ogren__3D5E1FD2" FromRole="Kullanicilar" ToRole="OdevTeslimleri" />
+    <NavigationProperty Name="PdfCalismalar" Relationship="EgitimSitesiProjeTasarimiModel.FK__PdfCalism__Ogret__4BAC3F29" FromRole="Kullanicilar" ToRole="PdfCalismalar" />
+  </EntityType>
+  <EntityType Name="Odevler">
+    <Key>
+      <PropertyRef Name="OdevId" />
+    </Key>
+    <Property Name="OdevId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DosyaYolu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="YuklenmeTarihi" Type="DateTime" Precision="3" />
+    <Property Name="OgretmenId" Type="Int32" />
+    <NavigationProperty Name="Kullanicilar" Relationship="Self.FK__Odevler__Ogretme__398D8EEE" FromRole="Odevler" ToRole="Kullanicilar" />
+    <NavigationProperty Name="OdevTeslimleri" Relationship="Self.FK__OdevTesli__OdevI__3C69FB99" FromRole="Odevler" ToRole="OdevTeslimleri" />
+  </EntityType>
+  <EntityType Name="OdevTeslimleri">
+    <Key>
+      <PropertyRef Name="TeslimId" />
+    </Key>
+    <Property Name="TeslimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OdevId" Type="Int32" />
+    <Property Name="OgrenciId" Type="Int32" />
+    <Property Name="TeslimDosyaYolu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TeslimTarihi" Type="DateTime" Precision="3" />
+    <Property Name="Puan" Type="Int32" />
+    <NavigationProperty Name="Kullanicilar" Relationship="Self.FK__OdevTesli__Ogren__3D5E1FD2" FromRole="OdevTeslimleri" ToRole="Kullanicilar" />
+    <NavigationProperty Name="Odevler" Relationship="Self.FK__OdevTesli__OdevI__3C69FB99" FromRole="OdevTeslimleri" ToRole="Odevler" />
+  </EntityType>
+  <Association Name="FK__Odevler__Ogretme__398D8EEE">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="0..1" />
+    <End Role="Odevler" Type="Self.Odevler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciId" />
+      </Principal>
+      <Dependent Role="Odevler">
+        <PropertyRef Name="OgretmenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OdevTesli__Ogren__3D5E1FD2">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="0..1" />
+    <End Role="OdevTeslimleri" Type="Self.OdevTeslimleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciId" />
+      </Principal>
+      <Dependent Role="OdevTeslimleri">
+        <PropertyRef Name="OgrenciId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OdevTesli__OdevI__3C69FB99">
+    <End Role="Odevler" Type="Self.Odevler" Multiplicity="0..1" />
+    <End Role="OdevTeslimleri" Type="Self.OdevTeslimleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Odevler">
+        <PropertyRef Name="OdevId" />
+      </Principal>
+      <Dependent Role="OdevTeslimleri">
+        <PropertyRef Name="OdevId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EgitimSitesiProjeTasarimiEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
+    <EntitySet Name="Odevler" EntityType="Self.Odevler" />
+    <EntitySet Name="OdevTeslimleri" EntityType="Self.OdevTeslimleri" />
+    <AssociationSet Name="FK__Odevler__Ogretme__398D8EEE" Association="Self.FK__Odevler__Ogretme__398D8EEE">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="Odevler" EntitySet="Odevler" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OdevTesli__Ogren__3D5E1FD2" Association="Self.FK__OdevTesli__Ogren__3D5E1FD2">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="OdevTeslimleri" EntitySet="OdevTeslimleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OdevTesli__OdevI__3C69FB99" Association="Self.FK__OdevTesli__OdevI__3C69FB99">
+      <End Role="Odevler" EntitySet="Odevler" />
+      <End Role="OdevTeslimleri" EntitySet="OdevTeslimleri" />
+    </AssociationSet>
+    <EntitySet Name="PdfCalismalar" EntityType="EgitimSitesiProjeTasarimiModel.PdfCalismalar" />
+    <AssociationSet Name="FK__PdfCalism__Ogret__4BAC3F29" Association="EgitimSitesiProjeTasarimiModel.FK__PdfCalism__Ogret__4BAC3F29">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="PdfCalismalar" EntitySet="PdfCalismalar" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PdfCalismalar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PdfYolu" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="YuklenmeTarihi" Type="DateTime" Precision="3" />
+    <Property Name="OgretmenId" Type="Int32" />
+    <NavigationProperty Name="Kullanicilar" Relationship="EgitimSitesiProjeTasarimiModel.FK__PdfCalism__Ogret__4BAC3F29" FromRole="PdfCalismalar" ToRole="Kullanicilar" />
+  </EntityType>
+  <Association Name="FK__PdfCalism__Ogret__4BAC3F29">
+    <End Type="EgitimSitesiProjeTasarimiModel.Kullanicilar" Role="Kullanicilar" Multiplicity="0..1" />
+    <End Type="EgitimSitesiProjeTasarimiModel.PdfCalismalar" Role="PdfCalismalar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciId" />
+      </Principal>
+      <Dependent Role="PdfCalismalar">
+        <PropertyRef Name="OgretmenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

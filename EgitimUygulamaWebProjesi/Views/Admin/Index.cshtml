@@ -1,0 +1,44 @@
+﻿@model List<EgitimUygulamaWebProjesi.Models.Odevler>
+@{
+    ViewBag.Title = "Öğretmen Paneli";
+    Layout = "~/Views/Shared/_OgretmenLayout.cshtml";
+}
+
+<h3>Yüklediğiniz Ödevler</h3>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered table-striped mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Başlık</th>
+                <th>Açıklama</th>
+                <th>Yüklenme Tarihi</th>
+                <th>PDF</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Baslik</td>
+                    <td>@item.Aciklama</td>
+                    <td>@(item.YuklenmeTarihi?.ToString("dd.MM.yyyy HH:mm"))</td>
+                    <td>
+                        <a class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-1"
+                           href="@item.DosyaYolu" target="_blank" style="min-width: 110px;">
+                            <i class="bi bi-file-earmark-pdf-fill"></i> Görüntüle
+                        </a>
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info mt-4">Henüz hiçbir ödev yüklenmedi.</div>
+}
+

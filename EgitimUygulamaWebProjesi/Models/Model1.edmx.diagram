@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8a58ac83f892446dbea58b95374dc758" Name="Diagram1">
+        <EntityTypeShape EntityType="EgitimSitesiProjeTasarimiModel.Kullanicilar" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EgitimSitesiProjeTasarimiModel.Odevler" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EgitimSitesiProjeTasarimiModel.OdevTeslimleri" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="EgitimSitesiProjeTasarimiModel.FK__Odevler__Ogretme__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="EgitimSitesiProjeTasarimiModel.FK__OdevTesli__Ogren__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="EgitimSitesiProjeTasarimiModel.FK__OdevTesli__OdevI__3C69FB99" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EgitimSitesiProjeTasarimiModel.PdfCalismalar" Width="1.5" PointX="3" PointY="5.125" />
+        <AssociationConnector Association="EgitimSitesiProjeTasarimiModel.FK__PdfCalism__Ogret__4BAC3F29" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

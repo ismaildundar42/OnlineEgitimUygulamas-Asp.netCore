@@ -1,0 +1,452 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
+    <div class="container text-center my-5 py-5">
+        <h1 class="text-white mt-4 mb-4">Evden Dil Öğren</h1>
+        <h1 class="text-white display-1 mb-5">Dil Eğitim Kursları</h1>
+        <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        Kurslar
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">İngilizce</a>
+                        <a class="dropdown-item" href="#">Almanca</a>
+                        <a class="dropdown-item" href="#">Fransızca</a>
+                        <a class="dropdown-item" href="#">İspanyolca</a>
+                    </div>
+                </div>
+                <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="Anahtar Kelime">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary px-4 px-lg-5">Ara</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Header End -->
+<!-- About Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100" src="@Url.Content("~/Edukate-1.0.0/img/about.jpg")" style="object-fit: cover;" alt="Hakkımızda">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="section-title position-relative mb-4">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Hakkımızda</h6>
+                    <h1 class="display-4">Online Eğitimin İlk Tercihi</h1>
+                </div>
+                <p>
+                    Öğrencilerimiz için en kaliteli online eğitim içeriklerini sunuyoruz.
+                    Zengin materyaller, uzman eğitmenler ve erişilebilir derslerle her yerden ve her zaman öğrenmenin kapılarını aralıyoruz.
+                    Amacımız, dijital çağın gereksinimlerine uygun yenilikçi bir öğrenme deneyimi sunmaktır.
+                </p>
+                <div class="row pt-3 mx-0">
+                    <div class="col-3 px-0">
+                        <div class="bg-success text-center p-4">
+                            <h1 class="text-white" data-toggle="counter-up">25</h1>
+                            <h6 class="text-uppercase text-white">Mevcut<span class="d-block">Dersler</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-3 px-0">
+                        <div class="bg-primary text-center p-4">
+                            <h1 class="text-white" data-toggle="counter-up">1343</h1>
+                            <h6 class="text-uppercase text-white">Online<span class="d-block">Kurslar</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-3 px-0">
+                        <div class="bg-secondary text-center p-4">
+                            <h1 class="text-white" data-toggle="counter-up">17</h1>
+                            <h6 class="text-uppercase text-white">Uzman<span class="d-block">Eğitmenler</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-3 px-0">
+                        <div class="bg-warning text-center p-4">
+                            <h1 class="text-white" data-toggle="counter-up">798</h1>
+                            <h6 class="text-uppercase text-white">Mutlu<span class="d-block">Öğrenciler</span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+<!-- Feature Start -->
+<div class="container-fluid bg-image" style="margin: 90px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 my-5 pt-5 pb-lg-5">
+                <div class="section-title position-relative mb-4">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Neden Bizi Tercih Etmelisiniz?</h6>
+                    <h1 class="display-4">Bizimle Öğrenmeye Başlamalısınız Çünkü...</h1>
+                </div>
+                <p class="mb-4 pb-2">
+                    Eğitimde kalite ve erişilebilirliği bir araya getiriyoruz. Deneyimli eğitmen kadromuz, interaktif materyaller ve uluslararası geçerliliği olan içerikler ile size en iyi öğrenme ortamını sunuyoruz.
+                </p>
+                <div class="d-flex mb-3">
+                    <div class="btn-icon bg-primary mr-4">
+                        <i class="fa fa-2x fa-graduation-cap text-white"></i>
+                    </div>
+                    <div class="mt-n1">
+                        <h4>Uzman Eğitmenler</h4>
+                        <p>Alanında uzman ve deneyimli eğitmenlerimizle kaliteli eğitimi garantiliyoruz.</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-3">
+                    <div class="btn-icon bg-secondary mr-4">
+                        <i class="fa fa-2x fa-certificate text-white"></i>
+                    </div>
+                    <div class="mt-n1">
+                        <h4>Uluslararası Sertifika</h4>
+                        <p>Eğitim sonunda alacağınız belgelerle kariyerinize güçlü bir adım atın.</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="btn-icon bg-warning mr-4">
+                        <i class="fa fa-2x fa-book-reader text-white"></i>
+                    </div>
+                    <div class="mt-n1">
+                        <h4>Çevrim İçi Dersler</h4>
+                        <p class="m-0">İstediğiniz zaman, istediğiniz yerden öğrenmeye devam edin.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100" src="@Url.Content("~/Edukate-1.0.0/img/feature.jpg")" style="object-fit: cover;" alt="Özellikler">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+<!-- Courses Start -->
+<!-- Kurslar Başlangıç -->
+<div class="container-fluid px-0 py-5">
+    <div class="row mx-0 justify-content-center pt-5">
+        <div class="col-lg-6">
+            <div class="section-title text-center position-relative mb-4">
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Dil Kurslarımız</h6>
+                <h1 class="display-4">Yeni Yayınlanan Yabancı Dil Kurslarımız</h1>
+            </div>
+        </div>
+    </div>
+    <div class="owl-carousel courses-carousel">
+        <!-- İngilizce -->
+        <div class="courses-item position-relative">
+            <img class="img-fluid" src="@Url.Content("~/Edukate-1.0.0/img/courses-1.jpg")" alt="İngilizce Kursu">
+            <div class="courses-text">
+                <h4 class="text-center text-white px-3">Temel İngilizce Dil Eğitimi</h4>
+                <div class="border-top w-100 mt-3">
+                    <div class="d-flex justify-content-between p-4">
+                        <span class="text-white"><i class="fa fa-user mr-2"></i>Ayşe Öğretmen</span>
+                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.9 <small>(420)</small></span>
+                    </div>
+                </div>
+                <div class="w-100 bg-white text-center p-4">
+                    <a class="btn btn-primary" href="#">Kurs Detayı</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Almanca -->
+        <div class="courses-item position-relative">
+            <img class="img-fluid" src="@Url.Content("~/Edukate-1.0.0/img/courses-2.jpg")" alt="Almanca Kursu">
+            <div class="courses-text">
+                <h4 class="text-center text-white px-3">A1-A2 Seviyesi Almanca Kursu</h4>
+                <div class="border-top w-100 mt-3">
+                    <div class="d-flex justify-content-between p-4">
+                        <span class="text-white"><i class="fa fa-user mr-2"></i>Mehmet Öğretmen</span>
+                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.8 <small>(310)</small></span>
+                    </div>
+                </div>
+                <div class="w-100 bg-white text-center p-4">
+                    <a class="btn btn-primary" href="#">Kurs Detayı</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fransızca -->
+        <div class="courses-item position-relative">
+            <img class="img-fluid" src="@Url.Content("~/Edukate-1.0.0/img/courses-3.jpg")" alt="Fransızca Kursu">
+            <div class="courses-text">
+                <h4 class="text-center text-white px-3">Günlük Konuşmalar İçin Fransızca</h4>
+                <div class="border-top w-100 mt-3">
+                    <div class="d-flex justify-content-between p-4">
+                        <span class="text-white"><i class="fa fa-user mr-2"></i>Elif Öğretmen</span>
+                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.7 <small>(280)</small></span>
+                    </div>
+                </div>
+                <div class="w-100 bg-white text-center p-4">
+                    <a class="btn btn-primary" href="#">Kurs Detayı</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- İspanyolca -->
+        <div class="courses-item position-relative">
+            <img class="img-fluid" src="@Url.Content("~/Edukate-1.0.0/img/courses-4.jpg")" alt="İspanyolca Kursu">
+            <div class="courses-text">
+                <h4 class="text-center text-white px-3">İspanyolca Temel Seviye Kursu</h4>
+                <div class="border-top w-100 mt-3">
+                    <div class="d-flex justify-content-between p-4">
+                        <span class="text-white"><i class="fa fa-user mr-2"></i>Carlos Öğretmen</span>
+                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.6 <small>(190)</small></span>
+                    </div>
+                </div>
+                <div class="w-100 bg-white text-center p-4">
+                    <a class="btn btn-primary" href="#">Kurs Detayı</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kayıt Formu -->
+    <div class="row justify-content-center bg-image mx-0 mb-5">
+        <div class="col-lg-6 py-5">
+            <div class="bg-white p-5 my-5">
+                <h1 class="text-center mb-4">Yeni Öğrencilere %30 İndirim</h1>
+                <form>
+                    <div class="form-row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control bg-light border-0" placeholder="Adınız Soyadınız" style="padding: 30px 20px;">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control bg-light border-0" placeholder="E-posta Adresiniz" style="padding: 30px 20px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <select class="custom-select bg-light border-0 px-3" style="height: 60px;">
+                                    <option selected>Bir Dil Seçin</option>
+                                    <option value="en">İngilizce</option>
+                                    <option value="de">Almanca</option>
+                                    <option value="fr">Fransızca</option>
+                                    <option value="es">İspanyolca</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn btn-primary btn-block" type="submit" style="height: 60px;">Hemen Kayıt Ol</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Kurslar Bitiş -->
+<!-- Courses End -->
+<!-- Team Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative mb-5">
+            <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Eğitmenlerimiz</h6>
+            <h1 class="display-4">Alanında Uzman Dil Eğitmenlerimizle Tanışın</h1>
+        </div>
+        <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+            <!-- Eğitmen 1 -->
+            <div class="team-item">
+                <img class="img-fluid w-100" src="@Url.Content("~/Edukate-1.0.0/img/team-1.jpg")" alt="İngilizce Eğitmeni">
+                <div class="bg-light text-center p-4">
+                    <h5 class="mb-3">Ayşe Yılmaz</h5>
+                    <p class="mb-2">İngilizce Eğitmeni (A1-B2)</p>
+                    <div class="d-flex justify-content-center">
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eğitmen 2 -->
+            <div class="team-item">
+                <img class="img-fluid w-100" src="@Url.Content("~/Edukate-1.0.0/img/team-2.jpg")" alt="Almanca Eğitmeni">
+                <div class="bg-light text-center p-4">
+                    <h5 class="mb-3">Mehmet Demir</h5>
+                    <p class="mb-2">Almanca Eğitmeni (A2-B1)</p>
+                    <div class="d-flex justify-content-center">
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eğitmen 3 -->
+            <div class="team-item">
+                <img class="img-fluid w-100" src="@Url.Content("~/Edukate-1.0.0/img/team-3.jpg")" alt="Fransızca Eğitmeni">
+                <div class="bg-light text-center p-4">
+                    <h5 class="mb-3">Elif Kaya</h5>
+                    <p class="mb-2">Fransızca Eğitmeni (Konuşma ve Dinleme)</p>
+                    <div class="d-flex justify-content-center">
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eğitmen 4 -->
+            <div class="team-item">
+                <img class="img-fluid w-100" src="@Url.Content("~/Edukate-1.0.0/img/team-4.jpg")" alt="İspanyolca Eğitmeni">
+                <div class="bg-light text-center p-4">
+                    <h5 class="mb-3">Carlos Ramirez</h5>
+                    <p class="mb-2">İspanyolca Eğitmeni (Başlangıç Düzeyi)</p>
+                    <div class="d-flex justify-content-center">
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Team End -->
+<!-- Testimonial Start -->
+<div class="container-fluid bg-image py-5" style="margin: 90px 0;">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <div class="section-title position-relative mb-4">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Öğrenci Yorumları</h6>
+                    <h1 class="display-4">Öğrencilerimiz Ne Diyor?</h1>
+                </div>
+                <p class="m-0">
+                    Platformumuz sayesinde yüzlerce öğrenci yabancı dil öğrenmeye başladı. Kaliteli eğitim kadromuz ve interaktif içeriklerimizle öğrencilerimizin memnuniyetini sağlıyoruz. İşte bazı yorumlar:
+                </p>
+            </div>
+            <div class="col-lg-7">
+                <div class="owl-carousel testimonial-carousel">
+                    <!-- Yorum 1 -->
+                    <div class="bg-white p-5">
+                        <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                        <p>
+                            İngilizce konuşma korkumu bu platform sayesinde yendim. Dersler çok akıcı ve öğretmenler gerçekten çok ilgiliydi. Herkese tavsiye ederim!
+                        </p>
+                        <div class="d-flex flex-shrink-0 align-items-center mt-4">
+                            <img class="img-fluid mr-4" src="@Url.Content("~/Edukate-1.0.0/img/testimonial-2.jpg")" alt="Öğrenci 1">
+                            <div>
+                                <h5>Emre Yıldız</h5>
+                                <span>İngilizce Kursu (A2)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Yorum 2 -->
+                    <div class="bg-white p-5">
+                        <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                        <p>
+                            Almanca A1 seviyesini tamamladım ve artık günlük konuşmaları rahatlıkla yapabiliyorum. Gerçekten harika bir deneyimdi.
+                        </p>
+                        <div class="d-flex flex-shrink-0 align-items-center mt-4">
+                            <img class="img-fluid mr-4" src="@Url.Content("~/Edukate-1.0.0/img/testimonial-1.jpg")" alt="Öğrenci 2">
+                            <div>
+                                <h5>Zeynep Kılıç</h5>
+                                <span>Almanca Kursu (A1)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonial Start -->
+<!-- Contact Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <!-- İletişim Bilgileri -->
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <div class="bg-light d-flex flex-column justify-content-center px-5" style="height: 450px;">
+                    <div class="d-flex align-items-center mb-5">
+                        <div class="btn-icon bg-primary mr-4">
+                            <i class="fa fa-2x fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Adresimiz</h4>
+                            <p class="m-0">Gazi Üniversitesi, Ankara, Türkiye</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-5">
+                        <div class="btn-icon bg-secondary mr-4">
+                            <i class="fa fa-2x fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Bizi Arayın</h4>
+                            <p class="m-0">+90 312 000 00 00</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="btn-icon bg-warning mr-4">
+                            <i class="fa fa-2x fa-envelope text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>E-Posta Gönderin</h4>
+                            <p class="m-0">destek@dilegiti.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İletişim Formu -->
+            <div class="col-lg-7">
+                <div class="section-title position-relative mb-4">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Yardıma mı ihtiyacınız var?</h6>
+                    <h1 class="display-4">Bize Mesaj Gönderin</h1>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="row">
+                            <div class="col-6 form-group">
+                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Adınız Soyadınız" required="required">
+                            </div>
+                            <div class="col-6 form-group">
+                                <input type="email" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="E-posta Adresiniz" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Konu" required="required">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control border-top-0 border-right-0 border-left-0 p-0" rows="5" placeholder="Mesajınız" required="required"></textarea>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary py-3 px-5" type="submit">Mesaj Gönder</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact End -->

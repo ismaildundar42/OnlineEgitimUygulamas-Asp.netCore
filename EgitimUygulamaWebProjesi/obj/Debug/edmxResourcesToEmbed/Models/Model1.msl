@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EgitimSitesiProjeTasarimiModelStoreContainer" CdmEntityContainer="EgitimSitesiProjeTasarimiEntities1">
+    <EntitySetMapping Name="Kullanicilar">
+      <EntityTypeMapping TypeName="EgitimSitesiProjeTasarimiModel.Kullanicilar">
+        <MappingFragment StoreEntitySet="Kullanicilar">
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Odevler">
+      <EntityTypeMapping TypeName="EgitimSitesiProjeTasarimiModel.Odevler">
+        <MappingFragment StoreEntitySet="Odevler">
+          <ScalarProperty Name="OdevId" ColumnName="OdevId" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="DosyaYolu" ColumnName="DosyaYolu" />
+          <ScalarProperty Name="YuklenmeTarihi" ColumnName="YuklenmeTarihi" />
+          <ScalarProperty Name="OgretmenId" ColumnName="OgretmenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OdevTeslimleri">
+      <EntityTypeMapping TypeName="EgitimSitesiProjeTasarimiModel.OdevTeslimleri">
+        <MappingFragment StoreEntitySet="OdevTeslimleri">
+          <ScalarProperty Name="TeslimId" ColumnName="TeslimId" />
+          <ScalarProperty Name="OdevId" ColumnName="OdevId" />
+          <ScalarProperty Name="OgrenciId" ColumnName="OgrenciId" />
+          <ScalarProperty Name="TeslimDosyaYolu" ColumnName="TeslimDosyaYolu" />
+          <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
+          <ScalarProperty Name="Puan" ColumnName="Puan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PdfCalismalar">
+      <EntityTypeMapping TypeName="EgitimSitesiProjeTasarimiModel.PdfCalismalar">
+        <MappingFragment StoreEntitySet="PdfCalismalar">
+          <ScalarProperty Name="OgretmenId" ColumnName="OgretmenId" />
+          <ScalarProperty Name="YuklenmeTarihi" ColumnName="YuklenmeTarihi" />
+          <ScalarProperty Name="PdfYolu" ColumnName="PdfYolu" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

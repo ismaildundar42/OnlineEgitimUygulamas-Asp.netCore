@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_OgretmenLayout.cshtml";
+    ViewBag.Title = "Ödev Yükle";
+}
+
+<h2>📤 Ödev Yükle</h2>
+
+@if (ViewBag.Mesaj != null)
+{
+    <div class="alert alert-info">@ViewBag.Mesaj</div>
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label">Başlık</label>
+        <input type="text" name="Baslik" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Açıklama</label>
+        <textarea name="Aciklama" class="form-control" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">PDF Dosyası Seç</label>
+        <input type="file" name="dosya" class="form-control" accept=".pdf" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Yükle</button>
+</form>

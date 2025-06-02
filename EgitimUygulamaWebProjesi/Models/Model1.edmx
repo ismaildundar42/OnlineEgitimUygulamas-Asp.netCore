@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EgitimSitesiProjeTasarimiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="KullaniciId" />
+          </Key>
+          <Property Name="KullaniciId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="100" />
+          <Property Name="Eposta" Type="nvarchar" MaxLength="100" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="100" />
+          <Property Name="Rol" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Odevler">
+          <Key>
+            <PropertyRef Name="OdevId" />
+          </Key>
+          <Property Name="OdevId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="100" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+          <Property Name="DosyaYolu" Type="nvarchar" MaxLength="200" />
+          <Property Name="YuklenmeTarihi" Type="datetime" />
+          <Property Name="OgretmenId" Type="int" />
+        </EntityType>
+        <EntityType Name="OdevTeslimleri">
+          <Key>
+            <PropertyRef Name="TeslimId" />
+          </Key>
+          <Property Name="TeslimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OdevId" Type="int" />
+          <Property Name="OgrenciId" Type="int" />
+          <Property Name="TeslimDosyaYolu" Type="nvarchar" MaxLength="200" />
+          <Property Name="TeslimTarihi" Type="datetime" />
+          <Property Name="Puan" Type="int" />
+        </EntityType>
+        <EntityType Name="PdfCalismalar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="nvarchar" MaxLength="200" />
+          <Property Name="Icerik" Type="nvarchar(max)" />
+          <Property Name="PdfYolu" Type="nvarchar" MaxLength="300" />
+          <Property Name="YuklenmeTarihi" Type="datetime" />
+          <Property Name="OgretmenId" Type="int" />
+        </EntityType>
+        <Association Name="FK__Odevler__Ogretme__398D8EEE">
+          <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="0..1" />
+          <End Role="Odevler" Type="Self.Odevler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanicilar">
+              <PropertyRef Name="KullaniciId" />
+            </Principal>
+            <Dependent Role="Odevler">
+              <PropertyRef Name="OgretmenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OdevTesli__OdevI__3C69FB99">
+          <End Role="Odevler" Type="Self.Odevler" Multiplicity="0..1" />
+          <End Role="OdevTeslimleri" Type="Self.OdevTeslimleri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odevler">
+              <PropertyRef Name="OdevId" />
+            </Principal>
+            <Dependent Role="OdevTeslimleri">
+              <PropertyRef Name="OdevId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OdevTesli__Ogren__3D5E1FD2">
+          <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="0..1" />
+          <End Role="OdevTeslimleri" Type="Self.OdevTeslimleri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanicilar">
+              <PropertyRef Name="KullaniciId" />
+            </Principal>
+            <Dependent Role="OdevTeslimleri">
+              <PropertyRef Name="OgrenciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PdfCalism__Ogret__4BAC3F29">
+          <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="0..1" />
+          <End Role="PdfCalismalar" Type="Self.PdfCalismalar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanicilar">
+              <PropertyRef Name="KullaniciId" />
+            </Principal>
+            <Dependent Role="PdfCalismalar">
+              <PropertyRef Name="OgretmenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EgitimSitesiProjeTasarimiModelStoreContainer">
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Odevler" EntityType="Self.Odevler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OdevTeslimleri" EntityType="Self.OdevTeslimleri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PdfCalismalar" EntityType="Self.PdfCalismalar" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Odevler__Ogretme__398D8EEE" Association="Self.FK__Odevler__Ogretme__398D8EEE">
+            <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+            <End Role="Odevler" EntitySet="Odevler" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OdevTesli__OdevI__3C69FB99" Association="Self.FK__OdevTesli__OdevI__3C69FB99">
+            <End Role="Odevler" EntitySet="Odevler" />
+            <End Role="OdevTeslimleri" EntitySet="OdevTeslimleri" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OdevTesli__Ogren__3D5E1FD2" Association="Self.FK__OdevTesli__Ogren__3D5E1FD2">
+            <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+            <End Role="OdevTeslimleri" EntitySet="OdevTeslimleri" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PdfCalism__Ogret__4BAC3F29" Association="Self.FK__PdfCalism__Ogret__4BAC3F29">
+            <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+            <End Role="PdfCalismalar" EntitySet="PdfCalismalar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EgitimSitesiProjeTasarimiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="KullaniciId" />
+          </Key>
+          <Property Name="KullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Eposta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Rol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Odevler" Relationship="Self.FK__Odevler__Ogretme__398D8EEE" FromRole="Kullanicilar" ToRole="Odevler" />
+          <NavigationProperty Name="OdevTeslimleri" Relationship="Self.FK__OdevTesli__Ogren__3D5E1FD2" FromRole="Kullanicilar" ToRole="OdevTeslimleri" />
+          <NavigationProperty Name="PdfCalismalar" Relationship="EgitimSitesiProjeTasarimiModel.FK__PdfCalism__Ogret__4BAC3F29" FromRole="Kullanicilar" ToRole="PdfCalismalar" />
+        </EntityType>
+        <EntityType Name="Odevler">
+          <Key>
+            <PropertyRef Name="OdevId" />
+          </Key>
+          <Property Name="OdevId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DosyaYolu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="YuklenmeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="OgretmenId" Type="Int32" />
+          <NavigationProperty Name="Kullanicilar" Relationship="Self.FK__Odevler__Ogretme__398D8EEE" FromRole="Odevler" ToRole="Kullanicilar" />
+          <NavigationProperty Name="OdevTeslimleri" Relationship="Self.FK__OdevTesli__OdevI__3C69FB99" FromRole="Odevler" ToRole="OdevTeslimleri" />
+        </EntityType>
+        <EntityType Name="OdevTeslimleri">
+          <Key>
+            <PropertyRef Name="TeslimId" />
+          </Key>
+          <Property Name="TeslimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OdevId" Type="Int32" />
+          <Property Name="OgrenciId" Type="Int32" />
+          <Property Name="TeslimDosyaYolu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Puan" Type="Int32" />
+          <NavigationProperty Name="Kullanicilar" Relationship="Self.FK__OdevTesli__Ogren__3D5E1FD2" FromRole="OdevTeslimleri" ToRole="Kullanicilar" />
+          <NavigationProperty Name="Odevler" Relationship="Self.FK__OdevTesli__OdevI__3C69FB99" FromRole="OdevTeslimleri" ToRole="Odevler" />
+        </EntityType>
+        <Association Name="FK__Odevler__Ogretme__398D8EEE">
+          <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="0..1" />
+          <End Role="Odevler" Type="Self.Odevler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanicilar">
+              <PropertyRef Name="KullaniciId" />
+            </Principal>
+            <Dependent Role="Odevler">
+              <PropertyRef Name="OgretmenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OdevTesli__Ogren__3D5E1FD2">
+          <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="0..1" />
+          <End Role="OdevTeslimleri" Type="Self.OdevTeslimleri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanicilar">
+              <PropertyRef Name="KullaniciId" />
+            </Principal>
+            <Dependent Role="OdevTeslimleri">
+              <PropertyRef Name="OgrenciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OdevTesli__OdevI__3C69FB99">
+          <End Role="Odevler" Type="Self.Odevler" Multiplicity="0..1" />
+          <End Role="OdevTeslimleri" Type="Self.OdevTeslimleri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Odevler">
+              <PropertyRef Name="OdevId" />
+            </Principal>
+            <Dependent Role="OdevTeslimleri">
+              <PropertyRef Name="OdevId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EgitimSitesiProjeTasarimiEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
+          <EntitySet Name="Odevler" EntityType="Self.Odevler" />
+          <EntitySet Name="OdevTeslimleri" EntityType="Self.OdevTeslimleri" />
+          <AssociationSet Name="FK__Odevler__Ogretme__398D8EEE" Association="Self.FK__Odevler__Ogretme__398D8EEE">
+            <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+            <End Role="Odevler" EntitySet="Odevler" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OdevTesli__Ogren__3D5E1FD2" Association="Self.FK__OdevTesli__Ogren__3D5E1FD2">
+            <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+            <End Role="OdevTeslimleri" EntitySet="OdevTeslimleri" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OdevTesli__OdevI__3C69FB99" Association="Self.FK__OdevTesli__OdevI__3C69FB99">
+            <End Role="Odevler" EntitySet="Odevler" />
+            <End Role="OdevTeslimleri" EntitySet="OdevTeslimleri" />
+          </AssociationSet>
+          <EntitySet Name="PdfCalismalar" EntityType="EgitimSitesiProjeTasarimiModel.PdfCalismalar" />
+          <AssociationSet Name="FK__PdfCalism__Ogret__4BAC3F29" Association="EgitimSitesiProjeTasarimiModel.FK__PdfCalism__Ogret__4BAC3F29">
+            <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+            <End Role="PdfCalismalar" EntitySet="PdfCalismalar" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="PdfCalismalar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PdfYolu" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="YuklenmeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="OgretmenId" Type="Int32" />
+          <NavigationProperty Name="Kullanicilar" Relationship="EgitimSitesiProjeTasarimiModel.FK__PdfCalism__Ogret__4BAC3F29" FromRole="PdfCalismalar" ToRole="Kullanicilar" />
+        </EntityType>
+        <Association Name="FK__PdfCalism__Ogret__4BAC3F29">
+          <End Type="EgitimSitesiProjeTasarimiModel.Kullanicilar" Role="Kullanicilar" Multiplicity="0..1" />
+          <End Type="EgitimSitesiProjeTasarimiModel.PdfCalismalar" Role="PdfCalismalar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanicilar">
+              <PropertyRef Name="KullaniciId" />
+            </Principal>
+            <Dependent Role="PdfCalismalar">
+              <PropertyRef Name="OgretmenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EgitimSitesiProjeTasarimiModelStoreContainer" CdmEntityContainer="EgitimSitesiProjeTasarimiEntities1">
+          <EntitySetMapping Name="Kullanicilar">
+            <EntityTypeMapping TypeName="EgitimSitesiProjeTasarimiModel.Kullanicilar">
+              <MappingFragment StoreEntitySet="Kullanicilar">
+                <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Odevler">
+            <EntityTypeMapping TypeName="EgitimSitesiProjeTasarimiModel.Odevler">
+              <MappingFragment StoreEntitySet="Odevler">
+                <ScalarProperty Name="OdevId" ColumnName="OdevId" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="DosyaYolu" ColumnName="DosyaYolu" />
+                <ScalarProperty Name="YuklenmeTarihi" ColumnName="YuklenmeTarihi" />
+                <ScalarProperty Name="OgretmenId" ColumnName="OgretmenId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OdevTeslimleri">
+            <EntityTypeMapping TypeName="EgitimSitesiProjeTasarimiModel.OdevTeslimleri">
+              <MappingFragment StoreEntitySet="OdevTeslimleri">
+                <ScalarProperty Name="TeslimId" ColumnName="TeslimId" />
+                <ScalarProperty Name="OdevId" ColumnName="OdevId" />
+                <ScalarProperty Name="OgrenciId" ColumnName="OgrenciId" />
+                <ScalarProperty Name="TeslimDosyaYolu" ColumnName="TeslimDosyaYolu" />
+                <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
+                <ScalarProperty Name="Puan" ColumnName="Puan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PdfCalismalar">
+            <EntityTypeMapping TypeName="EgitimSitesiProjeTasarimiModel.PdfCalismalar">
+              <MappingFragment StoreEntitySet="PdfCalismalar">
+                <ScalarProperty Name="OgretmenId" ColumnName="OgretmenId" />
+                <ScalarProperty Name="YuklenmeTarihi" ColumnName="YuklenmeTarihi" />
+                <ScalarProperty Name="PdfYolu" ColumnName="PdfYolu" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
